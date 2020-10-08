@@ -365,7 +365,7 @@
 
                 <!-- sujet rameau élément d'entrée -->
 
-                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomCommun/tef:elementdEntree">
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/*/tef:elementdEntree">
                     <field name="sujetRameauElemEntree">
                         <xsl:value-of select="text()"/>
                     </field>
@@ -373,7 +373,7 @@
 
                 <!-- sujet rameau subdivision -->
 
-                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomCommun/tef:subdivision">
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/*/tef:subdivision">
                     <field name="sujetRameauSubDiv">
                         <xsl:value-of select="text()"/>
                     </field>
@@ -453,10 +453,10 @@
                     <xsl:value-of select="/mets:mets/mets:amdSec/mets:techMD/mets:mdWrap/mets:xmlData/tef:thesisAdmin/dc:identifier[@xsi:type='tef:NNT']"/>
                 </field>
 
-    	    <!-- these sur trvx -->
-    	    <field name="theseSurTravaux">
-                    <xsl:value-of select="/mets:mets/mets:amdSec[1]/mets:techMD[1]/mets:mdWrap[1]/mets:xmlData[1]/tef:thesisAdmin[1]/tef:theseSurTravaux[1]"/>
-    	    </field>
+				<!-- these sur trvx -->
+				<field name="theseSurTravaux">
+						<xsl:value-of select="/mets:mets/mets:amdSec[1]/mets:techMD[1]/mets:mdWrap[1]/mets:xmlData[1]/tef:thesisAdmin[1]/tef:theseSurTravaux[1]"/>
+				</field>
                 
                 <!--Format du document d'archivage -->
                 <field name="formatArchivage">
@@ -472,6 +472,106 @@
                 <field name="reutilisationAutorisee">
                     <xsl:value-of select="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE='tef_droits_etablissement_these']/mets:xmlData/metsRights:RightsDeclarationMD/metsRights:Context[1]/metsRights:Permissions[1]/@COPY"/>                   
                 </field>
+				
+				<field name="tailleArchivage">
+					<xsl:value-of select="/mets:mets/mets:amdSec/mets:techMD/mets:mdWrap/mets:xmlData/tef:meta_fichier/tef:taille"/>
+				</field>
+
+				<!--  vedetteRameauPersonne -->
+				<xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauPersonne/tef:elementdEntree">
+					<field name="vedettePersonneElemEntree">
+						<xsl:value-of select="."/>
+					</field>
+				</xsl:for-each>          
+				<xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauPersonne/tef:subdivision[@type!='subdivisionDeForme']">
+					 <field name="vedettePersonneSubDiv">
+						 <xsl:value-of select="."/>
+					 </field>  
+				</xsl:for-each>
+                
+				<!--  vedetteRameauNomCommun -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomCommun/tef:elementdEntree">
+                    <field name="vedetteNomCommunElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomCommun/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteNomCommunSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>      
+
+                <!--  vedetteRameauCollectivite -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauCollectivite/tef:elementdEntree">
+                    <field name="vedetteCollectiviteElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauCollectivite/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteCollectiviteSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>                   
+
+                <!--  vedetteRameauFamille -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauFamille/tef:elementdEntree">
+                    <field name="vedetteFamilleElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauFamille/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteFamilleSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>                              
+
+                <!--  vedetteRameauAuteurTitre -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauAuteurTitre/tef:elementdEntree">
+                    <field name="vedetteAuteurTitreElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauAuteurTitre/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteAuteurTitreSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>      
+
+                <!--  vedetteRameauTitre -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauTitre/tef:elementdEntree">
+                    <field name="vedetteTitreElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauTitre/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteTitreSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>          
+
+                <!--  vedetteRameauNomGeographique -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomGeographique/tef:elementdEntree">
+                    <field name="vedetteGeographiqueElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauNomGeographique/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteGeographiqueSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>     
+
+                <!--  vedetteRameauGenreForme -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauGenreForme/tef:elementdEntree">
+                    <field name="vedetteGenreFormeElemEntree">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauGenreForme/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteGenreformeSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each> 
                 
                 
 		<!-- Données de gestion -->

@@ -733,7 +733,38 @@
                     <field name="vedetteGeographiqueSubDiv">
                         <xsl:value-of select="."/>
                     </field>  
-                </xsl:for-each>                           
+                </xsl:for-each>      
+				<!--  vedetteRameauGenreForme -->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauGenreForme/tef:elementdEntree">
+                    <field name="vedetteGenreForme">
+                        <xsl:value-of select="."/>
+                    </field>
+                </xsl:for-each>                    
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauGenreForme/tef:subdivision[@type!='subdivisionDeForme']">
+                    <field name="vedetteGenreFormeSubDiv">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each> 
+				<!-- Subdivision Géographique-->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/*/tef:subdivision[@type='subdivisionGeographique']">
+                    <field name="subdivisionGeographique">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each> 
+				
+				<!-- Subdivision de Sujet-->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/*/tef:subdivision[@type='subdivisionDeSujet']">
+                    <field name="subdivisionDeSujet">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>
+				
+				<!-- Subdivision Chronologique-->
+                <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/*/tef:subdivision[@type='subdivisionChronologique']">
+                    <field name="subdivisionChronologique">
+                        <xsl:value-of select="."/>
+                    </field>  
+                </xsl:for-each>				
 
                 <!-- Données de gestion -->
 

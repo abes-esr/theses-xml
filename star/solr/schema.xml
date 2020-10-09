@@ -353,22 +353,22 @@
    <field name="impressionAutorisee" type="string" indexed="true" stored="true"/>
    <field name="reutilisationAutorisee" type="string" indexed="true" stored="true"/>   
    <field name="tailleArchivage" type="integer" indexed="true" stored="true"/>
-   <field name="vedettePersonneElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedettePersonneSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteNomCommunElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteNomCommunSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteCollectiviteElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteCollectiviteSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteFamilleElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteFamilleSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteAuteurTitreElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteAuteurTitreSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteTitreElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteTitreSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteGeographiqueElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteGeographiqueSubDiv" type="string" indexed="true" stored="true"/>
-   <field name="vedetteGenreFormeElemEntree" type="string" indexed="true" stored="true"/>
-   <field name="vedetteGenreFormeSubDiv" type="string" indexed="true" stored="true"/>
+   <field name="vedettePersonneElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedettePersonneSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteNomCommunElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteNomCommunSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteCollectiviteElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteCollectiviteSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteFamilleElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteFamilleSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteAuteurTitreElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteAuteurTitreSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteTitreElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteTitreSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteGeographiqueElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteGeographiqueSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteGenreFormeElemEntree" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="vedetteGenreFormeSubDiv" type="string" indexed="true" stored="true" multiValued="true"/>
    
    <field name="SGcodeEtab" type="string" indexed="true" stored="true"/>
    <field name="SGID_THESE" type="string" indexed="true" stored="true"/>

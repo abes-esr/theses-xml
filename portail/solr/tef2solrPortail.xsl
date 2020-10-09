@@ -736,7 +736,7 @@
                 </xsl:for-each>      
 				<!--  vedetteRameauGenreForme -->
                 <xsl:for-each select="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/tef:thesisRecord/tef:sujetRameau/tef:vedetteRameauGenreForme/tef:elementdEntree">
-                    <field name="vedetteGenreForme">
+                    <field name="vedetteGenreFormeElemEntree">
                         <xsl:value-of select="."/>
                     </field>
                 </xsl:for-each>                    

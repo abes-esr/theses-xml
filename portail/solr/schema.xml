@@ -425,7 +425,7 @@
    <field name="abstractES" type="string" indexed="true" stored="true" />
    <field name="abstractXX" type="string" indexed="true" stored="true" />
    <field name="etablissement" type="string" indexed="true" stored="true" multiValued="true" /> 
-   <field name="vedetteGenreForme" type="string" indexed="true" stored="true"/>
+   <field name="vedetteGenreFormeElemEntree" type="string" indexed="true" stored="true"/>
    <field name="vedetteGenreFormeSubDiv" type="string" indexed="true" stored="true"/>
    <field name="subdivisionGeographique" type="string" indexed="true" stored="true"/>
    <field name="subdivisionDeSujet" type="string" indexed="true" stored="true"/>
